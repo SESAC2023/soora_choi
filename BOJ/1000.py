@@ -1,6 +1,6 @@
-data = input() #
-data = data.split(" ") #문자열에 쓰는.. 쪼갠거 리스트로
-data = list(map(int, data)) #문자열에 대해. data에 대해 int로 
+data = input() 
+data = data.split(" ") 
+data = list(map(int, data)) 
 
 a = data[0]
 b = data[1]
