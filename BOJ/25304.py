@@ -7,6 +7,6 @@ for i in range(num):
   sum=sum+a*b
 
 if sum==total:
-  print("YES")
+  print("Yes")
 else:
-  print("NO")
+  print("No")
