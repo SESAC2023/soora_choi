@@ -10,3 +10,5 @@ if sum==total:
   print("Yes")
 else:
   print("No")
+
+#빼줘서 0인지 확인하는 방법도
