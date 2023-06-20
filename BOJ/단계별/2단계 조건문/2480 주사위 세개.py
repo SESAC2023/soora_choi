@@ -10,3 +10,5 @@ if a!=b:
     print(1000+c*100)
   if a!=c and b!=c:
     print(max(a,b,c)*100)
+
+#가지치기 분류
