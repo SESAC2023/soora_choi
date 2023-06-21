@@ -12,7 +12,7 @@ for i in (arr):
 print(c,b)
 
 #b=arr[0], c=arr[0] 를 for문 안에 넣으면 최대최소 담던 b,c변수가 자꾸 초기화 돼
-
+#max,min : 내장함수
 #멘토님
 n = int(input())
 arr = list(map(int, input().split()))
