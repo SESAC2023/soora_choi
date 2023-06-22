@@ -1,21 +1,3 @@
-#?
-n, k = map(int, input().split())
-
-cnt = 0
-for hour in range(n + 1):
-    for minute in range(60):
-        for second in range(60):
-            hour = str(hour)
-            minute = str(minute)
-            second = str(second)
-            current = hour + minute + second
-            if str(k) in current:
-                cnt += 1
-
-print(cnt)
-
-
-
 #희묵님
 n, k = map(int, input().split())
 
@@ -49,3 +31,5 @@ for hour in range(n + 1):
                 cnt += 1
 
 print(cnt)
+
+#zfill(2) 두자리 안되면 빈자리 0 넣
