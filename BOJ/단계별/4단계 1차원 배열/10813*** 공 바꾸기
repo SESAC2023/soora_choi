@@ -45,3 +45,9 @@ for j in t:
 print(ans)
 
 #ans[j[1]-1] 으로 바꿔도 오답
+
+""" 아래랑 같은 기능임
+temp = (b, a)
+a = temp[0]
+b = temp[1]
+"""
