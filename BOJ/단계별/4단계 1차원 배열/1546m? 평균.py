@@ -10,3 +10,6 @@ for i in range(n):
   sum=sum+score[i]
 
 print(sum/n)
+
+
+#멘토님 어떻게?
