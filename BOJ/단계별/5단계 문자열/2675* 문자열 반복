@@ -1,5 +1,5 @@
 t=int(input())
-
+ 
 for i in range(t):
   n,a = input().split()
   for i in range (len(a)):
