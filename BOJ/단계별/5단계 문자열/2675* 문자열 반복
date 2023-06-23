@@ -1,0 +1,26 @@
+t=int(input())
+
+for i in range(t):
+  n,a = input().split()
+  for i in range (len(a)):
+    print(a[i]*int(n), end='')
+  print()
+
+
+#오답. 출력물이 for문 돌면서 붙어서 한 줄로 나오게 어떻게 하지
+t=int(input())
+
+for i in range(t):
+  n,a = input().split()
+  for i in range (len(a)):
+    print(a[i]*int(n))
+
+#진호님 #문자열에서 바로 하나씩 꺼내오기
+import sys
+N = int(input())
+
+for i in range(N):
+    re_num, string = sys.stdin.readline().rstrip().split()
+    for j in string:  # 주어진 문자열을 하나씩 받아옴
+        print(j*int(re_num), end='')  # 받아온 문자열을, 반복 숫자 만큼 반복
+    print()
