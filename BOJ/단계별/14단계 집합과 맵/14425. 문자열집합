@@ -1,0 +1,16 @@
+import sys
+n,m=map(int,sys.stdin.readline().split())
+N=[]
+M=[]
+cnt=0
+
+for i in range(n):
+    N.append(input())
+for i in range(m):
+    M.append(input())
+   
+for i in range (m):
+    if M[i] in N:
+        cnt+=1
+            
+print(cnt)
