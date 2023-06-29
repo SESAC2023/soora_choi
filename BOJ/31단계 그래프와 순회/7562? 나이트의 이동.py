@@ -1,3 +1,46 @@
+#2 런타임에러
+import sys
+from collections import deque
+sys.setrecursionlimit(int(1e6))
+input=sys.stdin.readline
+
+dx = [2, -2, 2, -2, 1, -1, 1 ,-1]
+dy = [1, -1. -1, 1, 2, -2, -2, 2]
+
+t_c=int(input())
+
+for tc in range (t_c):
+    n=int(input())
+    s_x, s_y= map(int, input().split())
+    e_x, e_y= map(int, input().split())
+
+    visited = [ [False]*n for _ in range (n) ]
+    distance = [ [-1]*n for _ in range (n) ]
+
+    q=deque()
+    q.append((s_x,s_y))
+    visited[s_x][s_y] = True
+    distance[s_x][s_y] = 0
+
+    while q:
+        x,y = q.popleft()
+        if x==e_x and y==e_y:
+            break
+
+        for i in range(8):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if nx<0 or ny<0 or nx>=n or ny>=n:
+                continue
+            if not visited[nx][ny]:
+                visited[nx][ny]=True
+                distance[nx][ny]= distance[x][y]+1
+                q.append((nx,ny))
+
+    print(distance[x],[y])
+
+
+#1 의식의흐름 (실패메모)
 import sys
 from collections import deque
 sys.setrecursionlimit(int(1e6))
@@ -55,7 +98,7 @@ while q:
     nx = x + dx[i]
     ny = y + dy[i]
     #체스판 빠져나가는거 조건설정
-    if nx < 0 or nx > l,  ㅜㅜ :
+    if nx < 0 or nx > l,  :
       continue
   if not visited (nx, ny):
     visited[nx, ny] = True
