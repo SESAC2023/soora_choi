@@ -1,4 +1,4 @@
-#2 런타임에러
+#2 ???
 import sys
 from collections import deque
 sys.setrecursionlimit(int(1e6))
