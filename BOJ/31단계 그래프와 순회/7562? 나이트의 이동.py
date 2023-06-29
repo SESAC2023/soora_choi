@@ -1,11 +1,10 @@
-#2 ???
-import sys
+#2 import sys
 from collections import deque
 sys.setrecursionlimit(int(1e6))
 input=sys.stdin.readline
 
 dx = [2, -2, 2, -2, 1, -1, 1 ,-1]
-dy = [1, -1. -1, 1, 2, -2, -2, 2]
+dy = [1, -1, -1, 1, 2, -2, -2, 2]
 
 t_c=int(input())
 
@@ -37,7 +36,8 @@ for tc in range (t_c):
                 distance[nx][ny]= distance[x][y]+1
                 q.append((nx,ny))
 
-    print(distance[x],[y])
+    print(distance[x][y])
+#print에 distance[x],[y]라 쓴 것, dx dy 구분에 온점 섞여있던 것 때문에..
 
 
 #1 의식의흐름 (실패메모)
