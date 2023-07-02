@@ -1,3 +1,4 @@
+#멘토님
 """
 1) 내용 훑기: 그래프, DFS, 방문 처리, 탐색
 2) (중요) 입력 조건:
@@ -82,3 +83,48 @@ dfs(r)
 
 for i in range(1, n + 1):
     print(answer[i])
+
+
+#트라이
+import sys
+input=sys.stdin.readline
+sys.setrecursionlimit(int(1e6))
+
+n, m, r = map(int, input().split())
+
+graph=[[] for i in range(n+1)]
+
+for i in range (m):
+  a, b = map(int, input().split())
+  graph[a].append(b)
+  graph[b].append(a)
+
+#graph.sorted
+
+visitnum=[0]*(n+1)
+num=0
+
+visited=[ [False]]
+#n+1유무, 2차원배열로?, 필요유무
+
+stack=[]
+
+def dfs (V, E, R):
+  stack.append(R)
+  visitnum[R]=num+1
+  s=stack.pop(0)
+  #s는 남은리스트? 팝된 놈?
+  for i in (graph[s]):
+    stack.append(i)
+    if stack:
+      dfs(V, E, stack[0])
+
+  #ㅜㅜbfs 덱 popleft도 아니고..이럴리가 없는데.. 스택 선입선출하려면 append할때 순서 거꾸로 넣는 것 부터?
+  #if stack:
+    
+dfs(n,m,r)
+
+for i in range(1,n+1):
+  print(visitnum[i])
+
+#교정
