@@ -157,7 +157,7 @@ visitnum=[0]*(n+1)
 ##외부에서 num=1로 저장
 num=1
 
-#visited=[ [False]]
+#visited=[[False]]..?
 #아리송!! n+1유무, 2차원배열로?, 필요유무 (뒤)
 ##n+1 로 1차원배열
 visited = [False] * (n+1)
@@ -171,6 +171,10 @@ def dfs (R):
   
   ##global num!!
   global num
+
+  ##❗이 와중에 빼먹어서 처음에 결과 안 나옴
+  visited[R]=True
+
   
   visitnum[R] = num
   #visitnum[R]=num+1
