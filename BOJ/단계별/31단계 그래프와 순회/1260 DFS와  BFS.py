@@ -1,4 +1,4 @@
-#수정
+#트라이
 import sys
 sys.setrecursionlimit(int(1e6))
 from collections import deque
@@ -29,7 +29,7 @@ def dfs(x):
 
 dfs(r) #이렇게 시작하는거 생각하니까 dfs 안에서 첫번째도 해결하는게 좋을 것 같은
 
-print ( *dfsvisit ) #아오.. 이거 식으로 어떻게?
+print ( *dfsvisit[1:] ) #아오.. 이거 식으로 어떻게?
 
 #bfs
 visited = [False] * (n+1)
@@ -51,4 +51,4 @@ while q: #글로벌 지움
       q.append(i)
 
 #for i in bfsvisit: #입력부분 print i in range print bfsvisit[i]
-print( *bfsvisit )
+print( *bfsvisit[1:] )
