@@ -1,4 +1,4 @@
-#멘토님
+#🔑멘토님
 # 무방향 그래프(양방향 간선)
 # 노드(정점)의 개수가 100,000개
 # 간선(도로)의 개수가 200,000개
@@ -54,7 +54,12 @@ for i in range(1, n + 1):
 
 
 
-#트라이
+#🤔트라이1
+# 1- visited 리스트 잘못만들었음
+# 2- visited[]=True
+    : (오류) while q 내부에 넣어서 첫 값도 거기서 처리된 후, 다음 들어오는 값들도 처리하려는 의도
+    : (수정) 첫 값 True 처리 밖으로 꺼내고, 들어오는 값들 처리는 if not visited 안으로 넣음
+    
 import sys
 input=sys.stdin.readline
 sys.setrecursionlimit(int(1e6))
@@ -97,4 +102,50 @@ for i in range (1,n+1):
   print(visitnum[i])
 
 
-#교정
+
+#🤔교정
+import sys
+input=sys.stdin.readline
+sys.setrecursionlimit(int(1e6))
+from collections import deque
+
+n, m, r = map(int, input().split())
+
+graph = [ [] for i in range(n+1) ]
+
+#visited = [ [False] * (n+1) ]
+##주소가 같은 2차원 리스트로 만들어버려서??
+visited= [False] * (n+1)
+
+visitnum = [0] * (n+1)
+#num = 1
+
+for i in range(m):
+  a,b = map(int, input().split())
+  graph[a].append(b)
+  graph[b].append(a)
+
+for i in range(n+1):
+  graph[i].sort()
+  
+q=deque()
+
+#dfs에서 dfs(r) dfs에 r 넣어주는 대신, q에 첫값 넣어주는걸로 시작
+q.append(r)
+visited[r]=True #dfs에서는 def 내부에 #??없어도 되는거 아닌가
+num=1
+
+while q:
+  x=q.popleft() #x에는 pop된 거 저장, q에는 남은 리스트가 저장
+  #visited[x] = True #x=q.popleft 뒤에 와야쥥 #여기서 아예 없애고 if뒤에 가면? 첫번 밖에서 True 해놓으면 if 뒤로 빠져도 괜찮?
+  visitnum[x] = num
+  num+=1  
+  for i in graph[x]:
+    if not visited[i]:
+      visited[i] = True
+      q.append(i)
+
+#인접노드 graph로 저장해놓고 graph에 있는거 털어쓰는건 똑같은데, 인접노드 요소들을 미방문이면 q에 넣는데 오른쪽으로 쌓고 왼쪽부터 꺼내쓰다보니까 바로바로 깊이탐색으로 한 라인 노드 쓰는게 아니라, 걔네는 뒤에 누적해놓고, 앞에 들어왔던 애들부터 처리.
+  
+for i in range (1,n+1):
+  print(visitnum[i])
