@@ -1,4 +1,48 @@
 #try2
+import sys
+sys.setrecursionlimit(int(1e6))
+from collections import deque
+input=sys.stdin.readline
+
+n, m, r = map(int, input().split())
+
+graph = [ [] for i in range(n+1) ]
+
+for i in range(m):
+  a, b = map(int, input().split())
+  graph[a].append(b)
+  graph[b].append(a)
+
+#dfs
+visited = [False] * (n+1)
+def dfs(x):
+  visited[x]=True #if 밑으로 넣고 1항 따로 해줄까하다가
+
+  print(x, end=' ')
+  for i in graph[x]:
+    if not visited[i]:
+      dfs(i)
+
+dfs(r) #이렇게 시작하는거 생각하니까 dfs 안에서 첫번째도 해결하는게 좋을 것 같은
+print()
+
+#bfs
+visited = [False] * (n+1)
+q=deque()
+q.append(r)
+visited[r]=True
+
+while q: 
+  x=q.popleft()
+  print(x, end=' ')
+  for i in graph[x]:
+    if not visited[i]:
+      visited[i]=True
+      q.append(i)
+
+
+
+#try2
 #예제2 출력값이 다르게 나옴
 import sys
 sys.setrecursionlimit(int(1e6))
