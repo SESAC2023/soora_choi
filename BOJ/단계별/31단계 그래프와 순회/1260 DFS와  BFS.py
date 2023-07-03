@@ -1,4 +1,5 @@
 #try2
+#예제2 출력값이 다르게 나옴
 import sys
 sys.setrecursionlimit(int(1e6))
 from collections import deque
