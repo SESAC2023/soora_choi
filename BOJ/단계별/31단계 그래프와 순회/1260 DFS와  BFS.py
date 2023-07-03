@@ -68,7 +68,6 @@ input=sys.stdin.readline
 n, m, r = map(int, input().split())
 
 graph = [ [] for i in range(n+1) ]
-
 for i in range(m):
   a, b = map(int, input().split())
   graph[a].append(b)
@@ -79,6 +78,7 @@ for i in range (n+1):
 
 #dfs
 visited = [False] * (n+1)
+
 def dfs(x):
   visited[x]=True #if 밑으로 넣고 1항 따로 해줄까하다가
   print(x, end=' ')
@@ -89,8 +89,10 @@ def dfs(x):
 dfs(r) #이렇게 시작하는거 생각하니까 dfs 안에서 첫번째도 해결하는게 좋을 것 같은
 print()
 
+
 #bfs
 visited = [False] * (n+1)
+
 q=deque()
 q.append(r)
 visited[r]=True
