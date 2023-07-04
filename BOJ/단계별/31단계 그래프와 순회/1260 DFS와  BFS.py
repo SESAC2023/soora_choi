@@ -80,13 +80,13 @@ for i in range (n+1):
 visited = [False] * (n+1)
 
 def dfs(x):
-  visited[x]=True #if 밑으로 넣고 1항 따로 해줄까하다가
+  visited[x]=True 
   print(x, end=' ')
   for i in graph[x]:
     if not visited[i]:
       dfs(i)
 
-dfs(r) #이렇게 시작하는거 생각하니까 dfs 안에서 첫번째도 해결하는게 좋을 것 같은
+dfs(r) 
 print()
 
 
