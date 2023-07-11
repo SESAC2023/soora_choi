@@ -11,3 +11,6 @@ for i in range(9):
     max = a
 print(max)
 print(list.index(max)+1)
+
+
+#i=i+1로 (인덱스 대신) 잘못접근
