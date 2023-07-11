@@ -14,7 +14,7 @@ for p in ans:
 
 
 
-#멘토
+#멘토👑
 n, m = map(int, input().split())
 arr = [i for i in range(1, n + 1)]
 
