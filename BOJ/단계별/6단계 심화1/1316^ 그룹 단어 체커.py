@@ -1,3 +1,48 @@
+#드이어 정답 리턴 트루 오류.
+n=int(input())
+cnt=0
+
+def group(data):
+  visited = [False]*26
+  for x in range(len(data)):
+    if not visited[ord(data[x])-97]:
+      visited[ord(data[x])-97] = True
+    else:
+      if data[x] != data[x-1]:
+        return False
+  return True
+
+for i in range(n):
+  data=input()
+  if group(data):
+    print('me')
+    cnt+=1
+
+print(cnt)      
+
+
+# 답은 나오는데 오답- 마지막 예제에서 오답
+n=int(input())
+cnt=0
+
+def group(data):
+  visited = [False]*26
+  for x in range(len(data)):
+    if visited[ord(data[x])-97] == False:
+      visited[ord(data[x])-97] = True
+    else:
+      if data[x] == data[x-1]:
+        return True
+      else:
+        return False
+  return True
+
+for i in range(n):
+  data=input()
+  if group(data) == True:
+    cnt+=1
+print(cnt)      
+
 #망함1
 visited = [ False ] *26
 data=input()
@@ -35,9 +80,6 @@ print(cnt)
   #즉 조회해보니 트루인경우, 직전애랑 알파벳이 동일해야 그룹단어로 인정해ㅜㅁ
   
       
-
-
-
 
 
 
