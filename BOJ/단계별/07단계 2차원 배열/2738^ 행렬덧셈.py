@@ -1,3 +1,21 @@
+#정답
+a,b = map(int, input().split())
+alist = []
+blist = []
+
+for i in range(a):
+  i=list(map(int, input().split()))
+  alist.append(i)
+  
+for i in range(a):
+  i=list(map(int, input().split()))
+  blist.append(i)
+
+for i in range(a):
+  for j in range(b):
+    print (alist[i][j]+blist[i][j], end=' ')
+  print()
+
 #런타임 에러
 a,b = map(int, input().split())
 alist = []
