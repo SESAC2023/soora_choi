@@ -10,7 +10,7 @@ for i in range(n):
     for j in range(a, a+10):
       list[i][j]=1
 
-#2차원 행렬의 합
+#2차원 배열의 합
 sum=0
 for i in list:
   for j in i:
