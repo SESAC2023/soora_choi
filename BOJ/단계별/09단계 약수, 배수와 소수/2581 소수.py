@@ -1,3 +1,5 @@
+#예제 답은 나오는데 '틀렸습니다.'
+
 s=int(input())
 b=int(input())
 list=[]
