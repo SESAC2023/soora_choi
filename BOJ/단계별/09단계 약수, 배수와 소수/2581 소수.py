@@ -9,7 +9,7 @@ for n in range(s, b+1): #60~100
       if n in list:
         list.remove(n)
 
-if list == True:
+if list:
   sum=0
   for i in list:
     sum+=i
