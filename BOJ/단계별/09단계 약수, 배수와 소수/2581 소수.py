@@ -9,8 +9,11 @@ for n in range(s, b+1): #60~100
       if n in list:
         list.remove(n)
 
-sum=0
-for i in list:
-  sum+=i
-print(sum)
-print(list[0])
+if list == True:
+  sum=0
+  for i in list:
+    sum+=i
+  print(sum)
+  print(list[0])
+else:
+  print(-1)
